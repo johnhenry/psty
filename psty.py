@@ -1131,9 +1131,8 @@ Options:
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 50937))
+    port = int(os.environ.get("PORT", os.environ.get("VCAP_APP_PORT", 50937)))
     print "PORT:", port
-
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'apwfd:c')
         for o, a in opts:
