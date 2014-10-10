@@ -1,1 +1,1 @@
-python psty.py -a -d /dir
+web: python psty.py -a -d /dir
