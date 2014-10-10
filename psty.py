@@ -47,7 +47,6 @@ from cookielib import CookieJar, Cookie
 from urllib2 import Request
 import sqlite3
 
-
 try:
     from cStringIO import StringIO
 except ImportError:
@@ -1133,6 +1132,8 @@ Options:
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 50937))
+    print "PORT:", port
+
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'apwfd:c')
         for o, a in opts:
