@@ -1,2 +1,0 @@
-this.pigshell = pigshell;
-}();

@@ -10,7 +10,7 @@ Psty does three things:
     - Websocket server to let pigshell pipe data through Unix commands
 
 Psty is deliberately structured as a single file depending only on a standard
-Python 2.7 installation. This makes it easy to use and easy to read. 
+Python 2.7 installation. This makes it easy to use and easy to read.
 
 Won't work on Windows without some porting.
 
@@ -642,7 +642,7 @@ class PstyRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         except Exception, e:
             if hasattr(e, 'errno'):
-                retcode = e.errno 
+                retcode = e.errno
                 errstr = e.strerror
             else:
                 retcode = 1
@@ -1132,7 +1132,7 @@ Options:
 
 
 if __name__ == '__main__':
-    port = 50937
+    port = int(os.environ.get("PORT", 50937))
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'apwfd:c')
         for o, a in opts:
